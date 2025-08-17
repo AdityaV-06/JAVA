@@ -1,0 +1,23 @@
+import java.util.*;
+
+public class ExpenseApp {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        ArrayList<Double> expenses = new ArrayList<>();
+
+        while (true) {
+            System.out.println("\n1. Add Expense  2. View Total  3. Exit");
+            int ch = sc.nextInt();
+
+            if (ch == 1) {
+                System.out.print("Enter amount: ");
+                expenses.add(sc.nextDouble());
+            } else if (ch == 2) {
+                double sum=0;
+                for (double e: expenses) sum+=e;
+                System.out.println("Total Expenses: " + sum);
+            } else break;
+        }
+        sc.close();
+    }
+}
