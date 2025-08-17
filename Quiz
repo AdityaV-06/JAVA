@@ -1,0 +1,18 @@
+import java.util.*;
+
+public class QuizApp {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String[] q = {"Capital of India?", "2+2=?", "Java is ___?"};
+        String[] a = {"Delhi", "4", "Programming"};
+        int score = 0;
+
+        for (int i=0;i<q.length;i++) {
+            System.out.println(q[i]);
+            String ans = sc.nextLine();
+            if (ans.equalsIgnoreCase(a[i])) score++;
+        }
+        System.out.println("Your Score: " + score + "/" + q.length);
+        sc.close();
+    }
+}
