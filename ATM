@@ -1,0 +1,21 @@
+import java.util.*;
+
+public class ATMApp {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        double balance = 1000;
+
+        while (true) {
+            System.out.println("\n1. Balance  2. Deposit  3. Withdraw  4. Exit");
+            int ch = sc.nextInt();
+
+            if (ch == 1) System.out.println("Balance: " + balance);
+            else if (ch == 2) balance += sc.nextDouble();
+            else if (ch == 3) {
+                double amt = sc.nextDouble();
+                if (amt <= balance) balance -= amt; else System.out.println("Insufficient!");
+            } else break;
+        }
+        sc.close();
+    }
+}
